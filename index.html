@@ -68,22 +68,38 @@
 			var side = getParameterByName('side'); // bride (default) or groom 
 			var event = getParameterByName('event'); // wed (default) or both 
 
-			if (event != 'both') {
-				var event_engagement = document.getElementById('event_engagement');
-				event_engagement.style.display = 'none';
-			}
-			else{
+			if (event == 'both') {
 				var center_align = document.getElementById('center_align');
 				center_align.style.display = 'none';
+			}
+			else if(event == 'engagement'){
+				var event_wedding = document.getElementById('event_wedding');
+				event_wedding.style.display = 'none';
+			}
+			else{
+				var event_engagement = document.getElementById('event_engagement');
+				event_engagement.style.display = 'none';
 			}
 
 			if (side == 'groom') {
 				var couple_family = document.getElementById('couple_family');
 				var squad = document.getElementById('squad');
 				var couple_name = document.getElementById('couple_name');
+				var bride_contact = document.getElementById('bride_contact');
 				couple_family.appendChild(couple_family.firstElementChild);
 				squad.appendChild(squad.firstElementChild);
 				couple_name.innerHTML = "Himanshu &amp; Megha";
+				bride_contact.style.display = 'none';
+			}
+			else if(side == 'bride'){
+				var groom_contact = document.getElementById('groom_contact');
+				groom_contact.style.display = 'none';
+			}
+			else{
+				var contact = document.getElementById('contact');
+				var contact_list = document.getElementById('contact_list');
+				contact.style.display = 'none';
+				contact_list.style.display = 'none';
 			}
 		});
 	</script>
@@ -118,7 +134,7 @@
 								<li><a href="#">jQuery</a></li>
 							</ul>
 						</li>-->
-						<li><a href="contact.html">Contact</a></li>
+						<li id="contact_list"><a href="#contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -126,7 +142,7 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg_bride_groom.jpeg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/background_couple.jpeg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -201,7 +217,7 @@
 									<h3>Engagement Ceremony</h3>
 									<div class="event-col">
 										<i class="icon-clock"></i>
-										<span>11:00 AM</span>
+										<span>10:00 AM</span>
 										<span>4:00 PM</span>
 									</div>
 									<div class="event-col">
@@ -210,11 +226,11 @@
 										<span>April, 2022</span>
 									</div>
 									<a href="https://g.page/MarinaDreamsBanquet?share" style="color:indigo;"><i class="fa fa-map-marker" aria-hidden="true" style="color:indigo;"></i> Marina Dreams Banquets<br>(Maps Location)</a>
-									<p>B-72/5, Ring Rd, Block B, Wazirpur Industrial Area, Wazirpur, Delhi, 110052</p>
+									<p>2nd floor, B-72/5, Ring Rd, Block B, Wazirpur Industrial Area, Wazirpur, Delhi, 110052</p>
 									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.520688701857!2d77.16903701508419!3d28.70398128238955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d031b39a4919b%3A0xde31ba368fdfc8d!2sMarina%20Dreams%20Banquets%20(Wazirpur)!5e0!3m2!1sen!2sin!4v1649085535163!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 text-center">
+							<div id="event_wedding" class="col-md-6 col-sm-6 text-center">
 								<div class="event-wrap animate-box">
 									<h3>Wedding Ceremony</h3>
 									<div class="event-col">
@@ -586,28 +602,22 @@
 		</div>
 	</div>
 
-	<!--<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
+	<footer id="contact" id="fh5co-footer" role="contentinfo">
+		<div id="contact" class="container">
 
 			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+				<h1>Contact Details</h1>
+					<p id="bride_contact">
+						Mr. Deepak Aggarwal (Bride's father): 9968250218
+						Mr. Akshat Aggarwal (Bride's brother): 9716540682
 					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
+					<p id="groom_contact">
+						Mr. Vinod Singhal (Groom's father): 9625786915 / 9873076611
 					</p>
-				</div>
 			</div>
 
 		</div>
-	</footer>-->
+	</footer>
 	</div>
 
 	<div class="gototop">
